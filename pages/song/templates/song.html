@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ song.title or "Song" }}</h1>
+
+  <p><strong>Subtitle:</strong> {{ song.sub_title }}</p>
+  <p><strong>Album:</strong> {{ song.album }}</p>
+
+  <h3>Lyrics:</h3>
+  <pre>{{ song.lyrics }}</pre>
+
+  <p><a href="{{ url_for('songs.songs') }}">← Back to Song List</a></p>
+{% endblock %}

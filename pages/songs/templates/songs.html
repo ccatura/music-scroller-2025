@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ song_quantity ~ " " ~ title or "Songs" }}</h1>
+
+  {% for item in data %}
+      <div class="song-list-item">
+        <a href="{{ url_for('song.show_song', song_id=item.id) }}">
+          <div class="song-list-item-info">
+            <div class="song-list-item-title">{{ item.title }} ({{ item.id }})</div>
+            <div class="song-list-item-album">{{ item.album or "The Album"}}</div>
+            <div class="song-list-item-artist">{{ item.sub_title }}</div>
+          </div>
+        </a>
+        <div class="song-list-item-actions">
+          <div class="song-list-item-action-button">
+            <a href="#">Delete Song</a>
+          </div>
+          <div class="song-list-item-action-button">
+            Add To: &nbsp;
+            <select>
+              <option value="null">[Select Setlist]</option>
+              <option>Setlist</option>
+              <option>Setlist two</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+
+  
+{% endblock %}

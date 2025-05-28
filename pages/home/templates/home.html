@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ title or "Home Page" }}</h1>
+<p><a href="/user">Edit User</a></p>
+<p><a href="/songs">Songs</a></p>
+<p><a href="/sets">Sets</a></p>
+<p><a href="/create">Create</a></p>
+<p><a href="/search">Search</a></p>
+<p><a href="/song">Song</a></p>
+{{ subfolders }}
+{% endblock %}
